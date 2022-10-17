@@ -40,7 +40,7 @@ jobs:
         uses: helm/kind-action@9e8295d178de23cbfbd8fa16cf844eec1d773a07
         with:
           version: ${{ env.KIND_VERSION }}
-          image: ${{ env.KIND_IMAGE }}
+          node_image: ${{ env.KIND_IMAGE }}
       - name: Run chart-testing
         run: ct lint-and-install --validate-maintainers=false --charts helm/trivy
       - name: Run chart-testing (Ingress enabled)
